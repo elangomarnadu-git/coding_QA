@@ -4,6 +4,9 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Single_Transversal {
+    // ===== QUESTION 1 =====
+    // Question: Count even and odd values in an array.
+    // Input: arr = [1, 2, 3, 4] | Output: [2, 2]
     public static int[] countEvenOdd(int[] arr) {
         int even = 0;
         int odd = 0;
@@ -14,6 +17,9 @@ public class Single_Transversal {
         return new int[]{even, odd};
     }
 
+    // ===== QUESTION 2 =====
+    // Question: Find the maximum number of consecutive ones.
+    // Input: arr = [1, 1, 0, 1, 1, 1] | Output: 3
     public static int maxConsecutiveOnes(int[] arr) {
         int count = 0;
         int maxCount = 0;
@@ -28,6 +34,9 @@ public class Single_Transversal {
         return maxCount;
     }
 
+    // ===== QUESTION 3 =====
+    // Question: Find the maximum profit from one buy and one later sell.
+    // Input: prices = [7, 1, 5, 3, 6, 4] | Output: 5
     public static int maxProfit(int[] prices) {
         int minPrice = Integer.MAX_VALUE;
         int maxProfit = 0;
@@ -38,6 +47,9 @@ public class Single_Transversal {
         return maxProfit;
     }
 
+    // ===== QUESTION 4 =====
+    // Question: Find the maximum arr[j] - arr[i] where j is greater than i.
+    // Input: arr = [2, 3, 10, 6, 4, 8, 1] | Output: 8
     public static int maxDifference(int[] arr) {
         if (arr.length < 2) return 0;
         int minElement = arr[0];
@@ -49,6 +61,9 @@ public class Single_Transversal {
         return maxDiff;
     }
 
+    // ===== QUESTION 5 =====
+    // Question: Find the missing value from the range 0 through n.
+    // Input: arr = [3, 0, 1] | Output: 2
     public static int missingNumber(int[] arr) {
         int n = arr.length;
         int expectedSum = n * (n + 1) / 2;
@@ -57,6 +72,9 @@ public class Single_Transversal {
         return expectedSum - actualSum;
     }
 
+    // ===== QUESTION 6 =====
+    // Question: Find the first repeating value when scanning the array from left to right.
+    // Input: arr = [10, 5, 3, 4, 3, 5, 6] | Output: 5
     public static int firstRepeating(int[] arr) {
         Set<Integer> seen = new HashSet<>();
         int result = -1;
@@ -67,6 +85,9 @@ public class Single_Transversal {
         return result;
     }
 
+    // ===== QUESTION 7 =====
+    // Question: Find an index whose left and right sums are equal, or -1 if none exists.
+    // Input: arr = [1, 3, 5, 2, 2] | Output: 2
     public static int equilibriumIndex(int[] arr) {
         int totalSum = 0;
         for (int num : arr) totalSum += num;
@@ -79,6 +100,9 @@ public class Single_Transversal {
         return -1;
     }
 
+    // ===== QUESTION 8 =====
+    // Question: Find the value appearing more than half the time, or -1 if none exists.
+    // Input: arr = [2, 2, 1, 1, 1, 2, 2] | Output: 2
     public static int majorityElement(int[] arr) {
         int candidate = 0;
         int count = 0;
@@ -99,6 +123,9 @@ public class Single_Transversal {
         return count > arr.length / 2 ? candidate : -1;
     }
 
+    // ===== QUESTION 9 =====
+    // Question: Find the maximum sum of a contiguous subarray.
+    // Input: arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4] | Output: 6
     public static int maxSubArraySum(int[] arr) {
         if (arr.length == 0) return 0;
         int currentSum = arr[0];

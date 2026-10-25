@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Fixed_Sliding_Window {
+    // ===== QUESTION 1 =====
+    // Question: Find the maximum sum of any k consecutive elements.
+    // Input: arr = [2, 1, 5, 1, 3, 2], k = 3 | Output: 9
     public static int maxSum(int[] arr, int k) {
         int left = 0, window = 0;
         int best = Integer.MIN_VALUE;
@@ -18,6 +21,9 @@ public class Fixed_Sliding_Window {
         return best;
     }
 
+    // ===== QUESTION 2 =====
+    // Question: Find the maximum product of any k consecutive elements.
+    // Input: arr = [0, 2, 1, 5, 1, 3, 2], k = 3 | Output: 15
     public static long maxProduct(int[] arr, int k) {
         long best = Long.MIN_VALUE;
         for (int left = 0; left + k <= arr.length; left++) {
@@ -29,6 +35,9 @@ public class Fixed_Sliding_Window {
         return best;
     }
 
+    // ===== QUESTION 3 =====
+    // Question: Return the floored average of every subarray of size k.
+    // Input: arr = [0, 2, 1, 5, 1, 3, 2], k = 3 | Output: [1, 2, 2, 3, 2]
     public static int[] averages(int[] arr, int k) {
         int n = arr.length;
         int[] res = new int[n - k + 1];
@@ -45,6 +54,9 @@ public class Fixed_Sliding_Window {
         return "aeiouAEIOU".indexOf(c) >= 0;
     }
 
+    // ===== QUESTION 4 =====
+    // Question: Find the maximum number of vowels in a substring of length k.
+    // Input: s = "abciiidef", k = 3 | Output: 3
     public static int maxVowels(String s, int k) {
         int left = 0, cur = 0, best = 0;
         for (int right = 0; right < s.length(); right++) {
@@ -55,6 +67,9 @@ public class Fixed_Sliding_Window {
         return best;
     }
 
+    // ===== QUESTION 5 =====
+    // Question: Return the first negative number in every window of size k, or 0 if absent.
+    // Input: arr = [12, -1, -7, 8, -15, 30, 16, 28], k = 3 | Output: [-1, -1, -7, -15, -15, 0]
     public static int[] firstNegatives(int[] arr, int k) {
         int n = arr.length;
         int[] res = new int[n - k + 1];
@@ -70,6 +85,9 @@ public class Fixed_Sliding_Window {
         return res;
     }
 
+    // ===== QUESTION 6 =====
+    // Question: Count substrings of text that are anagrams of pattern.
+    // Input: text = "forxxorfxdofr", pattern = "for" | Output: 3
     public static int countAnagrams(String text, String pattern) {
         int n = text.length(), k = pattern.length();
         if (k > n) return 0;
@@ -84,6 +102,9 @@ public class Fixed_Sliding_Window {
         return count;
     }
 
+    // ===== QUESTION 7 =====
+    // Question: Does s2 contain a substring that is a permutation of s1?
+    // Input: s1 = "ab", s2 = "eidbaooo" | Output: true
     public static boolean checkInclusion(String s1, String s2) {
         int k = s1.length();
         if (k > s2.length()) return false;
@@ -98,6 +119,9 @@ public class Fixed_Sliding_Window {
         return false;
     }
 
+    // ===== QUESTION 8 =====
+    // Question: Return the starting indices of all substrings of s that are anagrams of p.
+    // Input: s = "cbaebabacd", p = "abc" | Output: [0, 6]
     public static List<Integer> findAnagrams(String s, String p) {
         List<Integer> res = new ArrayList<>();
         int n = s.length(), k = p.length();
@@ -113,6 +137,9 @@ public class Fixed_Sliding_Window {
         return res;
     }
 
+    // ===== QUESTION 9 =====
+    // Question: Find the maximum element in every contiguous subarray of size k.
+    // Input: arr = [1, 3, -1, -3, 5, 3, 6, 7], k = 3 | Output: [3, 3, 5, 5, 6, 7]
     public static int[] maxSlidingWindow(int[] arr, int k) {
         int n = arr.length;
         int[] res = new int[n - k + 1];
@@ -128,6 +155,9 @@ public class Fixed_Sliding_Window {
         return res;
     }
 
+    // ===== QUESTION 10 =====
+    // Question: Take exactly k cards from either end to maximize the score.
+    // Input: cardPoints = [1, 2, 3, 4, 5, 6, 1], k = 3 | Output: 12
     public static int maxScore(int[] cardPoints, int k) {
         int n = cardPoints.length;
         int size = n - k;

@@ -2,6 +2,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Two_pointers {
+    // ===== QUESTION 1 =====
+    // Question: Remove all occurrences of k in place and return the remaining length.
+    // Input: nums = [3, 2, 2, 3], k = 3 | Output: length 2, prefix [2, 2]
     public static int removeElement(int[] nums, int k) {
         int write = 0;
         for (int read = 0; read < nums.length; read++)
@@ -9,6 +12,9 @@ public class Two_pointers {
         return write;
     }
 
+    // ===== QUESTION 2 =====
+    // Question: Move negative values before non-negative values while preserving their order.
+    // Input: arr = [1, -2, 3, -4] | Output: [-2, -4, 1, 3]
     public static int[] moveNegatives(int[] arr) {
         int[] result = new int[arr.length]; int index = 0;
         for (int num : arr) if (num < 0) result[index++] = num;
@@ -16,6 +22,9 @@ public class Two_pointers {
         return result;
     }
 
+    // ===== QUESTION 3 =====
+    // Question: Remove duplicates from a sorted array in place, allowing at most two copies.
+    // Input: nums = [1, 1, 1, 2, 2, 3] | Output: length 5, prefix [1, 1, 2, 2, 3]
     public static int removeDuplicates(int[] nums) {
         if (nums.length <= 2) return nums.length;
         int write = 2;
@@ -25,6 +34,9 @@ public class Two_pointers {
         return write;
     }
 
+    // ===== QUESTION 4 =====
+    // Question: Merge two sorted arrays into one sorted array.
+    // Input: a = [1, 3, 5], b = [2, 4, 6] | Output: [1, 2, 3, 4, 5, 6]
     public static int[] merge(int[] a, int[] b) {
         int[] result = new int[a.length + b.length]; int i = 0, j = 0, k = 0;
         while (i < a.length && j < b.length)
@@ -34,6 +46,9 @@ public class Two_pointers {
         return result;
     }
 
+    // ===== QUESTION 5 =====
+    // Question: Reverse an array in place.
+    // Input: arr = [1, 2, 3, 4] | Output: [4, 3, 2, 1]
     public static void reverse(int[] arr) {
         int left = 0, right = arr.length - 1;
         while (left < right) {
@@ -43,6 +58,9 @@ public class Two_pointers {
         }
     }
 
+    // ===== QUESTION 6 =====
+    // Question: Find two numbers in a sorted array that sum to target; return 1-based indices.
+    // Input: nums = [2, 7, 11, 15], target = 9 | Output: [1, 2]
     public static int[] twoSum(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
         while (left < right) {
@@ -54,6 +72,9 @@ public class Two_pointers {
         return new int[]{-1, -1};
     }
 
+    // ===== QUESTION 7 =====
+    // Question: Return the squares of a sorted array in sorted order.
+    // Input: nums = [-4, -1, 0, 3, 10] | Output: [0, 1, 9, 16, 100]
     public static int[] sortedSquares(int[] nums) {
         int[] result = new int[nums.length];
         int left = 0, right = nums.length - 1, position = nums.length - 1;
@@ -70,6 +91,9 @@ public class Two_pointers {
         return result;
     }
 
+    // ===== QUESTION 8 =====
+    // Question: Rearrange an array so that even values come before odd values.
+    // Input: arr = [3, 1, 2, 4] | Output: [4, 2, 1, 3]
     public static void sortByParity(int[] arr) {
         int left = 0, right = arr.length - 1;
         while (left < right) {
@@ -82,6 +106,9 @@ public class Two_pointers {
         }
     }
 
+    // ===== QUESTION 9 =====
+    // Question: Find the maximum water area between two vertical lines.
+    // Input: height = [1, 8, 6, 2, 5, 4, 8, 3, 7] | Output: 49
     public static int maxArea(int[] height) {
         int left = 0, right = height.length - 1, maxArea = 0;
         while (left < right) {
@@ -93,6 +120,9 @@ public class Two_pointers {
         return maxArea;
     }
 
+    // ===== QUESTION 10 =====
+    // Question: Sort an array containing only 0, 1, and 2.
+    // Input: nums = [2, 0, 2, 1, 1, 0] | Output: [0, 0, 1, 1, 2, 2]
     public static void sortColors(int[] nums) {
         int low = 0, mid = 0, high = nums.length - 1;
         while (mid <= high) {

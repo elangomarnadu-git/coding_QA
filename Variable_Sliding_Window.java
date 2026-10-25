@@ -3,6 +3,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Variable_Sliding_Window {
+    // ===== QUESTION 1 =====
+    // Question: Find the longest subarray with sum exactly k (positive values).
+    // Input: arr = [1, 2, 1, 1, 1, 3, 4, 2], k = 4 | Output: [1, 2, 1]
     public static int[] longestSubarraySum(int[] arr, int k) {
         int left = 0, sum = 0, bestStart = 0, bestLen = 0;
         for (int right = 0; right < arr.length; right++) {
@@ -16,6 +19,9 @@ public class Variable_Sliding_Window {
         return Arrays.copyOfRange(arr, bestStart, bestStart + bestLen);
     }
 
+    // ===== QUESTION 2 =====
+    // Question: Find the smallest subarray with sum exactly k (positive values).
+    // Input: arr = [1, 2, 1, 1, 1, 3, 4, 2], k = 4 | Output: [4]
     public static int[] smallestSubarraySum(int[] arr, int k) {
         int left = 0, sum = 0, bestStart = 0, bestLen = Integer.MAX_VALUE;
         for (int right = 0; right < arr.length; right++) {
@@ -30,6 +36,9 @@ public class Variable_Sliding_Window {
         return Arrays.copyOfRange(arr, bestStart, bestStart + bestLen);
     }
 
+    // ===== QUESTION 3 =====
+    // Question: Find the minimum length of a subarray whose sum is at least k.
+    // Input: arr = [1, 2, 2, 3], k = 8 | Output: 4
     public static int minSubArrayLen(int[] arr, int k) {
         int left = 0, sum = 0, best = Integer.MAX_VALUE;
         for (int right = 0; right < arr.length; right++) {
@@ -42,6 +51,9 @@ public class Variable_Sliding_Window {
         return best == Integer.MAX_VALUE ? 0 : best;
     }
 
+    // ===== QUESTION 4 =====
+    // Question: Find the longest subarray containing exactly k odd numbers.
+    // Input: arr = [2, 1, 3, 4, 5, 6, 7, 8], k = 2 | Output: [4, 5, 6, 7, 8]
     public static int[] longestWithKOdds(int[] arr, int k) {
         if (k < 0) return new int[0];
         int left = 0, odds = 0, bestStart = 0, bestLen = 0;
@@ -59,6 +71,9 @@ public class Variable_Sliding_Window {
         return Arrays.copyOfRange(arr, bestStart, bestStart + bestLen);
     }
 
+    // ===== QUESTION 5 =====
+    // Question: Find the longest substring without repeating characters.
+    // Input: s = "abcabcbb" | Output: "abc"
     public static String longestUnique(String s) {
         int[] last = new int[128];
         Arrays.fill(last, -1);
@@ -75,6 +90,9 @@ public class Variable_Sliding_Window {
         return s.substring(bestStart, bestStart + bestLen);
     }
 
+    // ===== QUESTION 6 =====
+    // Question: Find the longest substring containing at most k distinct characters.
+    // Input: s = "eceba", k = 2 | Output: "ece"
     public static String longestAtMostKDistinct(String s, int k) {
         if (k <= 0) return "";
         int[] count = new int[128];
@@ -92,6 +110,9 @@ public class Variable_Sliding_Window {
         return s.substring(bestStart, bestStart + bestLen);
     }
 
+    // ===== QUESTION 7 =====
+    // Question: Find the longest substring containing exactly k distinct characters.
+    // Input: s = "aabacbebebe", k = 3 | Output: "cbebebe"
     public static String longestExactlyKDistinct(String s, int k) {
         if (k <= 0) return "";
         int[] count = new int[128];
@@ -109,6 +130,9 @@ public class Variable_Sliding_Window {
         return s.substring(bestStart, bestStart + bestLen);
     }
 
+    // ===== QUESTION 8 =====
+    // Question: Find the longest subarray of 1s after flipping at most k zeros.
+    // Input: arr = [1, 1, 0, 0, 1, 1, 1, 0, 1], k = 2 | Output: [1, 1, 0, 0, 1, 1, 1]
     public static int[] longestOnes(int[] arr, int k) {
         int left = 0, zeros = 0, bestStart = 0, bestLen = 0;
         for (int right = 0; right < arr.length; right++) {
@@ -124,6 +148,9 @@ public class Variable_Sliding_Window {
         return Arrays.copyOfRange(arr, bestStart, bestStart + bestLen);
     }
 
+    // ===== QUESTION 9 =====
+    // Question: Find the longest substring that can be made of one repeated letter using at most k replacements.
+    // Input: s = "AABABBA", k = 1 | Output: 4
     public static int characterReplacement(String s, int k) {
         int[] count = new int[26];
         int left = 0, maxCount = 0, best = 0;
@@ -138,6 +165,9 @@ public class Variable_Sliding_Window {
         return best;
     }
 
+    // ===== QUESTION 10 =====
+    // Question: Find the shortest substring of s containing all characters of t with required frequencies.
+    // Input: s = "ADOBECODEBANC", t = "ABC" | Output: "BANC"
     public static String minWindow(String s, String t) {
         if (t.length() > s.length()) return "";
         int[] need = new int[128];
